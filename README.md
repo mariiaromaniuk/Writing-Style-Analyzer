@@ -20,7 +20,7 @@ Input
 From the keyboard:  The name of the file containing the text to be analyzed.
 From the file:  The report to be analyzed. 
 
-Output
+Output 
 The name of the input file
 The statistical summary of the report
 The style warnings
