@@ -1,5 +1,5 @@
 # Writing-Style-Analyzer
-This program reads a report (running text) and issues warnings on style and partially correct bad style.
+This program reads a report (running text) and by utilizing a Binary Search Tree issues warnings on style and partially correct bad style.
 A statistical summary with the following information:
 - Total number of words in the report
 - Number of unique words
