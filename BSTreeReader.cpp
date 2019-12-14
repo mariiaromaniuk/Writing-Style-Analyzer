@@ -7,6 +7,7 @@
 
 #include "BSTreeReader.hpp"
 
+
 BSTreeReader::BSTreeReader(){
     totalWords = 0;
     totalUnique = 0;
@@ -37,37 +38,43 @@ void BSTreeReader::analyze(Node<string>* p){
 
 
 // Getter function for usedOften
-vector<string> BSTreeReader::getUsedOften() {
+vector<string> BSTreeReader::getUsedOften(){
     return usedOften;
 }
 
+
 // Getter function for totalUnique
-int BSTreeReader::getTotalUniqueWords() {
+int BSTreeReader::getTotalUniqueWords(){
     return totalUnique;
 }
 
+
 // Getter function for totalUniqueThree
-int BSTreeReader::getTotalUniqueWordsThree() {
+int BSTreeReader::getTotalUniqueWordsThree(){
     return totalUniqueThree;
 }
 
+
 // Getter function for totalWords
-int BSTreeReader::getTotalWords() {
+int BSTreeReader::getTotalWords(){
     return totalWords;
 }
 
+
 // Getter function for TotalSentences
-int BSTreeReader::getTotalSentences() {
+int BSTreeReader::getTotalSentences(){
     return totalSentences;
 }
 
+
 // Getter function for avgSentenceLength
-int BSTreeReader::getAvgSentenceLength() {
+int BSTreeReader::getAvgSentenceLength(){
     return avgSentenceLength;
 }
 
+
 // Function that calculates avgWordLength
-int BSTreeReader::getAvgWordLength() {
+int BSTreeReader::getAvgWordLength(){
     return avgWordLength/totalWords;
 }
 
@@ -89,15 +96,18 @@ void BSTreeReader::displayTree(){
     inOrder(root);
 }
 
+
 // Dummy function to pass the root into analyze()
 void BSTreeReader::analyzeDummy(){
     analyze(root);
 }
 
+
 // Dummy function to pass the root into printIndexes()
 void BSTreeReader::printIndexesDummy(){
     printIndexes(root);
 }
+
 
 // Dummy function to pass the root into printIndexesFile()
 void BSTreeReader::printIndexesFileDummy(ofstream& out){
@@ -113,9 +123,10 @@ void BSTreeReader::insert(string str){
     str = toLowerString(str);
     char ch = str[str.length() - 1];
     
-    if (ch == '.' || ch == ',' || ch == ':' || ch == ';' || ch == '/'){
+    if (ch == '.' || ch == ',' || ch == ':' || ch == ';' ||
+        ch == '/' || ch == '"' || ch == '!' || ch == '?'){
         temp->info = str.substr(0, str.length() - 1);
-        if (ch == '.'){
+        if (ch == '.' || ch == '!' || ch == '?'){
             totalSentences++;
             avgSentenceLength = totalWords/totalSentences;
         }
@@ -155,7 +166,8 @@ bool BSTreeReader::equals(string treeNode, string str) {
     char ch = str[str.length() - 1];
     
     if (treeNode == str || (treeNode == str.substr(0, str.length() - 1)
-        && (ch == '.' ||  ch == ',' || ch == ':' || ch == ';' || ch == '/')))
+                            && (ch == '.' ||  ch == ',' || ch == ':' || ch == ';' ||
+                                ch == '/' || ch == '"' || ch == '!' || ch == '?')))
         return true;
     else
         return false;
@@ -179,7 +191,7 @@ void BSTreeReader::printIndexes(Node<string>* p) {
     
     if (p != nullptr){
         if (p->left != nullptr) printIndexes(p->left);
-        if (change != p->info[0]) {
+        if (change != p->info[0]){
             char x = toupper(p->info[0]);
             cout << x << endl;
             change = p->info[0];
@@ -190,13 +202,13 @@ void BSTreeReader::printIndexes(Node<string>* p) {
 }
 
 
-// Function that prints to a file provided by the user
-void BSTreeReader::printIndexesFile(Node<string>* p, ofstream& out) {
-    if (p != nullptr) {
+// Function that prints to a file 
+void BSTreeReader::printIndexesFile(Node<string>* p, ofstream& out){
+    if (p != nullptr){
         if (p->left != nullptr) printIndexesFile(p->left, out);
         if (change != p->info[0]) {
             char x = toupper(p->info[0]);
-            out << x << endl;
+            out << endl << x << endl;
             change = p->info[0];
         }
         out << p->info << endl;
