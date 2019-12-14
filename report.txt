@@ -2,19 +2,20 @@ File name: input.txt
 
 
 ---------- STATISTICAL SUMMARY -----------
-Total words: 647
-Total unique words: 288
-Total unique words of more than three letters: 239
+Total words: 648
+Total unique words: 286
+Total unique words of more than three letters: 236
 Average word length: 5
-Average sentence length: 23
+Average sentence length: 24
 
 
 ------------- STYLE WARNINGS -------------
 Words used too often
-Average sentence length too long: 23
+Average sentence length too long: 24
 
 
 --------- INDEX OF UNIQUE WORDS ----------
+
 A
 a
 ability
@@ -32,7 +33,7 @@ alone
 also
 an
 and
-another’s
+another
 any
 appreciate
 are
@@ -42,7 +43,9 @@ at
 author
 authorship
 awareness
+
 B
+bad
 be
 because
 become
@@ -54,6 +57,7 @@ born
 build
 but
 by
+
 C
 called
 can
@@ -72,6 +76,7 @@ consultations
 could
 created
 crippling
+
 D
 david
 debunked
@@ -81,6 +86,7 @@ did
 discouraged
 do
 done
+
 E
 either
 emphasizes
@@ -96,6 +102,7 @@ experience
 experiences
 experiential
 eyes
+
 F
 fact
 failure
@@ -112,6 +119,7 @@ fostering
 from
 fruition
 fun
+
 G
 game
 genius
@@ -121,6 +129,7 @@ good
 gotten
 groan
 group
+
 H
 habits
 happen
@@ -132,6 +141,7 @@ heard
 help
 how
 however
+
 I
 i
 idea
@@ -153,18 +163,23 @@ intricately
 is
 it
 itself
+
 J
 just
+
 K
 key
 know
+
 L
+learned
 learning
 least
 like
 linked
 located
 luckily
+
 M
 many
 me
@@ -179,11 +194,13 @@ move
 must
 my
 myth
+
 N
 necessarily
 never
 not
 novice
+
 O
 occur
 of
@@ -201,6 +218,7 @@ other
 others
 our
 out
+
 P
 part
 particularly
@@ -228,6 +246,7 @@ punish
 punishment
 push
 puzzle
+
 R
 rather
 reading
@@ -244,6 +263,7 @@ revisions
 reward
 rhetorical
 roll
+
 S
 satisfaction
 saw
@@ -251,7 +271,7 @@ sees
 session
 set
 setting
-shenk’s
+shenk
 simultaneously
 situated
 social
@@ -267,6 +287,7 @@ stone
 student
 students
 successful
+
 T
 talented
 teacher
@@ -281,7 +302,6 @@ them
 themselves
 these
 they
-they’re
 think
 this
 those
@@ -291,6 +311,7 @@ told
 tools
 truly
 tutoring
+
 U
 ultimately
 unchangeable
@@ -300,8 +321,10 @@ unlucky
 up
 us
 use
+
 V
 value
+
 W
 way
 we
@@ -320,9 +343,5 @@ working
 world
 writer
 writers
-writers’
 writes
 writing
-�
-“bad”
-“learned”
