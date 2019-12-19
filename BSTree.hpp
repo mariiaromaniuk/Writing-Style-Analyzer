@@ -1,4 +1,3 @@
-//
 //  BSTree.hpp
 //  Tree Project
 //
@@ -31,16 +30,26 @@ protected:
 public:
     BSTree();
     ~BSTree();
+    BSTree(const BSTree<T>&);
+    BSTree<T>& operator=(const BSTree<T>&);
     void preOrderDummy();
-    void postOrderDummy();
     void inOrderDummy();
+    void postOrderDummy();
     bool searchDummy(T);
-    void preOrder(Node<T>*);
-    void postOrder(Node<T>*);
-    void inOrder(Node<T>*);
-    bool search(T, Node<T>*);
     void insert(T);
+    int treeHeight();
+    bool isEmpty();
+    void deleteTreeDummy();
+    
+private:
+    void copyTree(Node<T>* &, Node<T>*);
+    void preOrder(Node<T>*);
+    void inOrder(Node<T>*);
+    void postOrder(Node<T>*);
+    bool search(T,Node<T>*);
     void deleteTree(Node<T>*);
+    
 };
 
 #endif /* BSTree_hpp */
+
