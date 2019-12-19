@@ -7,7 +7,6 @@
 
 #include "BSTreeReader.hpp"
 
-
 BSTreeReader::BSTreeReader(){
     totalWords = 0;
     totalUnique = 0;
@@ -42,39 +41,35 @@ vector<string> BSTreeReader::getUsedOften(){
     return usedOften;
 }
 
-
 // Getter function for totalUnique
 int BSTreeReader::getTotalUniqueWords(){
     return totalUnique;
 }
-
 
 // Getter function for totalUniqueThree
 int BSTreeReader::getTotalUniqueWordsThree(){
     return totalUniqueThree;
 }
 
-
 // Getter function for totalWords
 int BSTreeReader::getTotalWords(){
     return totalWords;
 }
-
 
 // Getter function for TotalSentences
 int BSTreeReader::getTotalSentences(){
     return totalSentences;
 }
 
-
 // Getter function for avgSentenceLength
 int BSTreeReader::getAvgSentenceLength(){
     return avgSentenceLength;
 }
 
-
-// Function that calculates avgWordLength
+// Function that calculates average word length
 int BSTreeReader::getAvgWordLength(){
+    if (totalWords == 0)
+        totalWords = 1;
     return avgWordLength/totalWords;
 }
 
@@ -96,18 +91,15 @@ void BSTreeReader::displayTree(){
     inOrder(root);
 }
 
-
 // Dummy function to pass the root into analyze()
 void BSTreeReader::analyzeDummy(){
     analyze(root);
 }
 
-
 // Dummy function to pass the root into printIndexes()
 void BSTreeReader::printIndexesDummy(){
     printIndexes(root);
 }
-
 
 // Dummy function to pass the root into printIndexesFile()
 void BSTreeReader::printIndexesFileDummy(ofstream& out){
@@ -128,6 +120,8 @@ void BSTreeReader::insert(string str){
         temp->info = str.substr(0, str.length() - 1);
         if (ch == '.' || ch == '!' || ch == '?'){
             totalSentences++;
+            if (totalSentences == 0)
+                totalSentences = 1;
             avgSentenceLength = totalWords/totalSentences;
         }
     }
